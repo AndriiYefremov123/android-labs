@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Медіаплеєр"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Оберіть тип файлу:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <RadioButton
+            android:id="@+id/rbAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Аудіо"
+            android:layout_marginEnd="24dp"/>
+
+        <RadioButton
+            android:id="@+id/rbVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Відео"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Оберіть джерело:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <RadioButton
+            android:id="@+id/rbLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пристрій"
+            android:layout_marginEnd="24dp"/>
+
+        <RadioButton
+            android:id="@+id/rbInternet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Інтернет"/>
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введіть URL..."
+        android:inputType="textUri"
+        android:visibility="gone"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnSelectFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Обрати файл"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvSelectedFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="13sp"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Відтворити"/>
+
+</LinearLayout>
