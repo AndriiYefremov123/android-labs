@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1a1a2e"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="КОМПАС"
+        android:textColor="#e0e0e0"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.3"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Північ"
+        android:textColor="#4fc3f7"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvDegrees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0°"
+        android:textColor="#b0bec5"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"/>
+
+    <com.example.lab5.CompassView
+        android:id="@+id/compassView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+
+    <TextView
+        android:id="@+id/tvAccuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Точність: —"
+        android:textColor="#78909c"
+        android:textSize="13sp"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/tvSensorInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#546e7a"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"/>
+
+</LinearLayout>

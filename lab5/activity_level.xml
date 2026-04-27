@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1a1a2e"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="БУДІВЕЛЬНИЙ РІВЕНЬ"
+        android:textColor="#e0e0e0"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.2"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вирівняйте пристрій"
+        android:textColor="#ef5350"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <com.example.lab5.LevelView
+        android:id="@+id/levelView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+
+    <TextView
+        android:id="@+id/tvRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Нахил (Roll): 0°"
+        android:textColor="#b0bec5"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/tvPitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Підйом (Pitch): 0°"
+        android:textColor="#b0bec5"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📱 Режим: плаский"
+        android:textColor="#4fc3f7"
+        android:textSize="15sp"
+        android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

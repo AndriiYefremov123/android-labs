@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1a1a2e"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Датчики"
+        android:textColor="#e0e0e0"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Оберіть інструмент"
+        android:textColor="#78909c"
+        android:textSize="16sp"
+        android:layout_marginBottom="48dp"/>
+
+    <Button
+        android:id="@+id/btnCompass"
+        android:layout_width="260dp"
+        android:layout_height="80dp"
+        android:text="Компас"
+        android:textSize="20sp"
+        android:backgroundTint="#0f3460"
+        android:textColor="#4fc3f7"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnLevel"
+        android:layout_width="260dp"
+        android:layout_height="80dp"
+        android:text="Будівельний рівень"
+        android:textSize="18sp"
+        android:backgroundTint="#0f3460"
+        android:textColor="#66bb6a"/>
+
+</LinearLayout>
