@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Table & Background -->
+    <color name="table_green">#1B5E20</color>
+    <color name="table_green_dark">#0D3B10</color>
+    <color name="panel_bg">#1A2A1A</color>
+
+    <!-- Card colors -->
+    <color name="card_white">#FAFAFA</color>
+    <color name="red_suit">#C62828</color>
+    <color name="black_suit">#111111</color>
+    <color name="card_back_blue">#1A237E</color>
+
+    <!-- Accent -->
+    <color name="accent_gold">#FFD54F</color>
+    <color name="label_color">#80FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Results -->
+    <color name="green_win">#69F0AE</color>
+    <color name="red_lose">#FF5252</color>
+    <color name="grey_push">#B0BEC5</color>
+
+    <!-- Buttons -->
+    <color name="btn_hit">#2E7D32</color>
+    <color name="btn_stand">#B71C1C</color>
+    <color name="btn_double">#E65100</color>
+    <color name="btn_split">#1565C0</color>
+</resources>

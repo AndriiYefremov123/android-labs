@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/table_green"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="36dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
+
+        <!-- TOP BAR: Balance + Bet -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/panel_bg"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvBalance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Баланс: $1000"
+                android:textColor="@color/accent_gold"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvBet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ставка: $0"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="end"/>
+        </LinearLayout>
+
+        <!-- КОЛОДА + ДИЛЕР в одному рядку -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
+
+            <!-- Візуальна колода -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/ivDeckStack"
+                    android:layout_width="60dp"
+                    android:layout_height="85dp"
+                    android:scaleType="fitXY"
+                    android:contentDescription="Колода карт"/>
+
+                <TextView
+                    android:id="@+id/tvDeckCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="~104"
+                    android:textColor="@color/label_color"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- Карти дилера -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ДИЛЕР"
+                    android:textColor="@color/label_color"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="4dp"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:contentDescription="Карти дилера">
+                    <LinearLayout
+                        android:id="@+id/layoutDealerCards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:minHeight="100dp"
+                        android:padding="2dp"/>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDealerScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="72dp"/>
+
+        <!-- DIVIDER -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33FFFFFF"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- RESULT MESSAGE -->
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="12dp"
+            android:background="@drawable/result_bg"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+        <!-- PLAYER SECTION -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ГРАВЕЦЬ"
+            android:textColor="@color/label_color"
+            android:textSize="11sp"
+            android:layout_marginBottom="4dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:contentDescription="Карти гравця">
+            <LinearLayout
+                android:id="@+id/layoutPlayerCards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:minHeight="110dp"
+                android:padding="2dp"/>
+        </HorizontalScrollView>
+
+        <!-- SPLIT HANDS -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:contentDescription="Розділені руки">
+            <LinearLayout
+                android:id="@+id/layoutSplitHands"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="2dp"/>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/tvPlayerScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- BETTING BUTTONS -->
+        <LinearLayout
+            android:id="@+id/layoutBettingButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnBet10"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="$10"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="@color/panel_bg"/>
+
+            <Button
+                android:id="@+id/btnBet50"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="$50"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="@color/panel_bg"/>
+
+            <Button
+                android:id="@+id/btnBet100"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="$100"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="@color/panel_bg"/>
+
+            <Button
+                android:id="@+id/btnClearBet"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="✕"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:backgroundTint="@color/red_lose"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <!-- DEAL BUTTON -->
+        <Button
+            android:id="@+id/btnDeal"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="РОЗДАТИ"
+            android:textSize="18sp"
+            android:textColor="@color/black_suit"
+            android:textStyle="bold"
+            android:backgroundTint="@color/accent_gold"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- GAME BUTTONS -->
+        <LinearLayout
+            android:id="@+id/layoutGameButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/btnHit"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="ЩЕ КАРТУ"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/btn_hit"/>
+
+                <Button
+                    android:id="@+id/btnStand"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="СТОП"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/btn_stand"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnDouble"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="ПОДВОЇТИ"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/btn_double"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/btnSplit"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="РОЗДІЛИТИ"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/btn_split"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- NEW GAME BUTTON -->
+        <Button
+            android:id="@+id/btnNewGame"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="НОВА РОЗДАЧА"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:backgroundTint="@color/panel_bg"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</ScrollView>
